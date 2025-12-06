@@ -1,0 +1,94 @@
+parameters:
+  - $ref: "../components/order_dto.yaml"
+
+post:
+  summary: Создаёт новый заказ на основе выбранных пользователем деталей.
+  operationId: CreateOrder
+  tags:
+    - Order
+  requestBody:
+    $ref: ../components/pay_order_request.yaml
+
+  responses:
+    '200':
+      description: All is correct, and we have good response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/pay_order_response.yaml
+
+    '404':
+      description: Detail not found
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/not_found_error.yaml"
+
+    '400':
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/bad_request_error.yaml"
+
+    '500':
+      description: Internal Serv Error
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/internal_server_error.yaml"
+
+    '502':
+      description: Bad Gateway
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/bad_gateway_error.yaml"
+    '409':
+      description: Conflict cheto tam
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/conflict_error.yaml"
+    '403':
+      description: Forbidden Error
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/forbidden_error.yaml"
+    '555':
+      description: HZ POCHEMY NO ETO GENERIC ERROR
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/generic_error.yaml"
+    '429':
+      description: rate limit error
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/rate_limit_error.yaml"
+    '503':
+      description: Service Invalible
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/service_unavailable_error.yaml"
+    '401':
+      description: unauthorized error
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/unauthorized_error.yaml"
+    '402':
+      description: validation error
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/validation_error.yaml"
+    '422':
+      description: tozhe validation error
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/validation_error.yaml"

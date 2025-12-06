@@ -1,0 +1,22 @@
+openapi: 3.0.3
+info:
+  title: OrderServiceApi
+  version: 1.0.0
+  description: Open Api Order Service-a для заказа товаров из Inventory Service
+
+x-ogen:
+  target: ./pkg/openapi/order/v1
+  package: Order
+  clean: true
+paths:
+  api/v1/order_by/{uuid}:
+    $ref: ./paths/order_by_uuid.yaml
+
+  api/v1/order/cancel:
+    $ref: ./paths/order_cancel.yaml
+
+  api/v1/order/pay:
+    $ref: ./paths/order_pay.yaml
+
+  api/v1/orders:
+    $ref: ./paths/orders.yaml

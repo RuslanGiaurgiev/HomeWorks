@@ -1,0 +1,12 @@
+parameters:
+  - $ref: ../params/order_uuid.yaml
+
+get:
+  summary: Получает заказ по uuid
+  responses:
+    '200':
+      description: Все хорошо получай инфу
+      content:
+        application/json:
+          schema:
+           $ref: "../components/get_order_response.yaml"

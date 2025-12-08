@@ -1,0 +1,25 @@
+summary: Order Pay
+parameters:
+  - $ref: "../params/order_uuid.yaml"
+
+post:
+  requestBody:
+    $ref: "../components/create_order_request.yaml"
+
+  responses:
+    '204':
+      description: Pay for order
+      content:
+        application/json:
+          schema:
+            $ref: "../components/enums/order_status.yaml"
+
+    '404':
+      description: 404 not found err
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/not_found_error.yaml"
+
+    '409':
+      description: Conflict error

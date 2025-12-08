@@ -1,0 +1,20 @@
+summary: CancelOrder
+
+post:
+  responses:
+    '204':
+      description: Cansel Oreder
+      content:
+        application/json:
+          schema:
+            $ref: "../components/enums/order_status.yaml"
+
+    '404':
+      description: 404 not found err
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/not_found_error.yaml"
+
+    '409':
+      description: Conflict error

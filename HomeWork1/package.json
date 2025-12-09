@@ -1,0 +1,16 @@
+{
+  "name": "homework1",
+  "version": "1.0.0",
+  "description": "``` HomeWorks/ ├── HomeWork1/ │   ├── contracts/                          # Контракты между сервисами │   │   ├── inventory_service_contracts.md │   │   ├── order_service_contracts.md │   │   └── payment_service_contracts.md │   │ │   ├── inventory/                          # Сервис инвентаризации │   │   └── cmd/ │   │       └── main.go │   │ │   ├── order/                              # Сервис заказов (основной) │   │   └── cmd/ │   │       └── main.go │   │ │   ├── payment/                            # Сервис платежей │   │   └── cmd/ │   │       └── main.go │   │ │   └── shared/                             # Общие ресурсы │       └── api/ │           └── order/ │               └── v1/ │                   ├── components/         # Переиспользуемые компоненты OpenAPI │                   │   ├── enums/         # Перечисления │                   │   │   ├── order_status.yaml │                   │   │   └── payment_method.yaml │                   │   │ │                   │   └── errors/        # Стандартные ошибки API │                   │       ├── bad_gateway_error.yaml │                   │       ├── bad_request_error.yaml │                   │       ├── conflict_error.yaml │                   │       ├── forbidden_error.yaml │                   │       ├── generic_error.yaml │                   │       ├── internal_server_error.yaml │                   │       ├── not_found_error.yaml │                   │       ├── rate_limit_error.yaml │                   │       ├── service_unavailable_error.yaml │                   │       ├── unauthorized_error.yaml │                   │       └── validation_error.yaml │                   │ │                   ├── create_order_request.yaml │                   ├── create_order_response.yaml │                   ├── get_order_response.yaml │                   ├── order_dto.yaml │                   ├── pay_order_request.yaml │                   └── pay_order_response.yaml │                   │ │                   ├── params/             # Параметры пути │                   │   └── order_uuid.yaml │                   │ │                   ├── paths/              # Определения эндпоинтов │                   │   ├── order_by_uuid.yaml │                   │   ├── order_cancel.yaml │                   │   ├── order_pay.yaml │                   │   └── orders.yaml │                   │ │                   └── order.openapi.yaml  # Основной файл спецификации │ ├── MW.hw.md                                # Методические указания ├── README.md                               # Основная документация └── Taskfile.yml                           # Файл задач для автоматизации ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@redocly/cli": "^2.12.5"
+  }
+}

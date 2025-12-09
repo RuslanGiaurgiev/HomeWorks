@@ -1,92 +1,79 @@
 parameters:
-  - $ref: "../components/order_dto.yaml"
+  - $ref: "../params/order_uuid.yaml"
 
 get:
-  summary: Получение заказа по uui
-  operationId: GetByUUid
+  summary: Получение заказа по UUID
+  operationId: GetOrderByUuid
   tags:
     - Order
 
   responses:
     '200':
-      description: All is correct, and we have good response
+      description: Заказ успешно найден
       content:
         application/json:
           schema:
-            $ref: "../components/get_order_response.yaml"
-
-    '404':
-      description: Detail not found
-      content:
-        application/json:
-          schema:
-            $ref: "../components/errors/not_found_error.yaml"
+            $ref: "../components/order_dto.yaml"
 
     '400':
-      description: Bad request
+      description: Неверный запрос
       content:
         application/json:
           schema:
             $ref: "../components/errors/bad_request_error.yaml"
 
+    '401':
+      description: Ошибка авторизации
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/unauthorized_error.yaml"
+
+    '403':
+      description: Доступ запрещён
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/forbidden_error.yaml"
+
+    '404':
+      description: Заказ не найден
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/not_found_error.yaml"
+
+    '422':
+      description: Ошибка валидации
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/validation_error.yaml"
+
+    '429':
+      description: Превышен лимит запросов
+      content:
+        application/json:
+          schema:
+            $ref: "../components/errors/rate_limit_error.yaml"
+
     '500':
-      description: Internal Serv Error
+      description: Внутренняя ошибка сервера
       content:
         application/json:
           schema:
             $ref: "../components/errors/internal_server_error.yaml"
 
     '502':
-      description: Bad Gateway
+      description: Ошибка шлюза
       content:
         application/json:
           schema:
             $ref: "../components/errors/bad_gateway_error.yaml"
-    '409':
-      description: Conflict cheto tam
-      content:
-        application/json:
-          schema:
-            $ref: "../components/errors/conflict_error.yaml"
-    '403':
-      description: Forbidden Error
-      content:
-        application/json:
-          schema:
-            $ref: "../components/errors/forbidden_error.yaml"
-    '555':
-      description: HZ POCHEMY NO ETO GENERIC ERROR
-      content:
-        application/json:
-          schema:
-            $ref: "../components/errors/generic_error.yaml"
-    '429':
-      description: rate limit error
-      content:
-        application/json:
-          schema:
-            $ref: "../components/errors/rate_limit_error.yaml"
+
     '503':
-      description: Service Invalible
+      description: Сервис недоступен
       content:
         application/json:
           schema:
             $ref: "../components/errors/service_unavailable_error.yaml"
-    '401':
-      description: unauthorized error
-      content:
-        application/json:
-          schema:
-            $ref: "../components/errors/unauthorized_error.yaml"
-    '402':
-      description: validation error
-      content:
-        application/json:
-          schema:
-            $ref: "../components/errors/validation_error.yaml"
-    '422':
-      description: tozhe validation error
-      content:
-        application/json:
-          schema:
-            $ref: "../components/errors/validation_error.yaml"

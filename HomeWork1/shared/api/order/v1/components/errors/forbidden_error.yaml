@@ -1,0 +1,13 @@
+type: object
+required:
+  - code
+  - message
+properties:
+  code:
+    type: integer
+    description: Forribden Error
+    example: 409
+  message:
+    type: string
+    description: не знаю что за ошибка
+    example: "Forbidden Error ._."

@@ -1,0 +1,13 @@
+type: object
+required:
+  - code
+  - message
+properties:
+  code:
+    type: integer
+    description: Generic Error
+    example: 555
+  message:
+    type: string
+    description: Ошибка генерации как я понял
+    example: "Generic Error"

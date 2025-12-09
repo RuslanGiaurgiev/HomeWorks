@@ -4,7 +4,7 @@ parameters:
 
 post:
   requestBody:
-    $ref: "../components/create_order_request.yaml"
+    $ref: "../components/pay_order_request.yaml"
 
   responses:
     '204':
@@ -12,7 +12,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: "../components/enums/order_status.yaml"
+            $ref: "../components/pay_order_response.yaml"
 
     '404':
       description: 404 not found err

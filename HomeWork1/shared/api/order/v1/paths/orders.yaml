@@ -7,7 +7,7 @@ post:
   tags:
     - Order
   requestBody:
-    $ref: ../components/pay_order_request.yaml
+    $ref: "../components/create_order_request.yaml"
 
   responses:
     '200':
@@ -15,7 +15,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/pay_order_response.yaml
+            $ref: "../components/create_order_response.yaml"
 
     '404':
       description: Detail not found

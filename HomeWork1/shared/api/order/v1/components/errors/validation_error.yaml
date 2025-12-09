@@ -1,0 +1,13 @@
+type: object
+required:
+  - code
+  - message
+properties:
+  code:
+    type: integer
+    description: validation error
+    example: 402, 422
+  message:
+    type: string
+    description: validation error
+    example: "validation error"

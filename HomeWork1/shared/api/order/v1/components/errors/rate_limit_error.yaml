@@ -1,0 +1,13 @@
+type: object
+required:
+  - code
+  - message
+properties:
+  code:
+    type: integer
+    description: Limit Error
+    example: 429
+  message:
+    type: string
+    description: Limit Error
+    example: "Fatal: Limit Error"

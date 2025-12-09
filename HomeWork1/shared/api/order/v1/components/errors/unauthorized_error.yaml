@@ -1,0 +1,13 @@
+type: object
+required:
+  - code
+  - message
+properties:
+  code:
+    type: integer
+    description: unauthorized error
+    example: 401
+  message:
+    type: string
+    description: unauthorized error
+    example: "unauthorized error"

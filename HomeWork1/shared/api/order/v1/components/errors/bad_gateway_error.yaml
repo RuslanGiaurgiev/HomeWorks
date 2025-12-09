@@ -1,1 +1,14 @@
 type: object
+required:
+  - code
+  - message
+properties:
+  code:
+    type: integer
+    description: bad gateway
+    example: 502
+
+  message:
+    type: string
+    description: Bad gateway
+    example: "Bad Gateway try again"

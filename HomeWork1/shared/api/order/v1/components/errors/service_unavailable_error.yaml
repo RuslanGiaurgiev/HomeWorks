@@ -1,0 +1,13 @@
+type: object
+required:
+  - code
+  - message
+properties:
+  code:
+    type: integer
+    description: Service Invalible
+    example: 503
+  message:
+    type: string
+    description: Service Invalible
+    example: "Service Invalible"

@@ -586,6 +586,6 @@ components:
         format: uuid
         example: 123e4567-e89b-12d3-a456-426614174000
 x-ogen:
-  target: ./pkg/openapi/order/v1
+  target: shared/pkg/openapi/order/v1
   package: Order
   clean: true

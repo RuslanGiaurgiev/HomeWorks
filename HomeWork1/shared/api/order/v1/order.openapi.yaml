@@ -5,7 +5,7 @@ info:
   description: Open Api Order Service-a для заказа товаров из Inventory Service
 
 x-ogen:
-  target: ./pkg/openapi/order/v1
+  target: shared/pkg/openapi/order/v1
   package: Order
   clean: true
 paths:
